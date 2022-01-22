@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [{
+      "label": "CMake Debug",
+      "type": "shell",
+      "linux":{
+        "command": "${workspaceFolder}/build.sh",
+        "args": ["Debug"],  
+      }
+    },
+    {
+      "label": "CMake Release",
+      "type": "shell",
+      "linux":{
+        "command": "${workspaceFolder}/build.sh"
+      }
+    },
+  ]
+}

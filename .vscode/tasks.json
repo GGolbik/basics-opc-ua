@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [{
+      "label": "CMake open62541 server Debug",
+      "type": "shell",
+      "linux":{
+        "command": "${workspaceFolder}/open62541-server/build.sh",
+        "args": ["Debug"],
+      }
+    },
+    {
+      "label": "CMake open62541 server Release",
+      "type": "shell",
+      "linux":{
+        "command": "${workspaceFolder}/open62541-server/build.sh"
+      }
+    },
+  ]
+}
