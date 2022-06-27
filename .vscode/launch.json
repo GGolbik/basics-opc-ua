@@ -1,29 +1,77 @@
 {
   "version": "0.2.0",
   "configurations": [{
-      "name": "Debug open62541 server",
-      "type": "cppdbg",
-      "request": "launch",
-      "windows": {
-        "program": "${workspaceFolder}/open62541-server/build/default/opcuaserver.exe",
-        "miDebuggerPath": "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gdb.exe",
-      },
-      "linux": {
-        "program": "${workspaceFolder}/open62541-server/build/default/opcuaserver",
-        "miDebuggerPath": "gdb",
-      },
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [{
-        "description": "Enable pretty-printing for gdb",
-        "text": "-enable-pretty-printing",
-        "ignoreFailures": true
-      }],
-      "preLaunchTask": "CMake open62541 server Debug"
+    // Use IntelliSense to find out which attributes exist for C# debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+    "name": "ua.netstandard-client Debug",
+    "type": "coreclr",
+    "request": "launch",
+    "preLaunchTask": "build-ua.netstandard-client",
+    // If you have changed target frameworks, make sure to update the program path.
+    "program": "${workspaceFolder}/ua.netstandard-client/build/bin/UaDotnetStandardClient/Debug/net6.0/UaDotnetStandardClient.dll",
+    "args": [],
+    "cwd": "${workspaceFolder}/ua.netstandard-client/src",
+    // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+    "console": "internalConsole",
+    "stopAtEntry": false,
+    "logging": {
+      "moduleLoad": false
+    },
+  }, {
+    "name": "ua.netstandard-client Debug All",
+    "type": "coreclr",
+    "request": "launch",
+    "preLaunchTask": "build-ua.netstandard-client",
+    // If you have changed target frameworks, make sure to update the program path.
+    "program": "${workspaceFolder}/ua.netstandard-client/build/bin/UaDotnetStandardClient/Debug/net6.0/UaDotnetStandardClient.dll",
+    "args": [],
+    "cwd": "${workspaceFolder}/ua.netstandard-client/src",
+    // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+    "console": "internalConsole",
+    "stopAtEntry": false,
+    "logging": {
+      "moduleLoad": false
+    },
+    "justMyCode": false,
+    "enableStepFiltering": false,
+    "requireExactSource": false,
+    "symbolOptions": {
+      "searchPaths": [],
+      "searchMicrosoftSymbolServer": true,
+      "searchNuGetOrgSymbolServer": true
     }
-  ]
+  }, {
+    "name": "Debug open62541 server",
+    "type": "cppdbg",
+    "request": "launch",
+    "windows": {
+      "program": "${workspaceFolder}/open62541-server/build/default/opcuaserver.exe",
+      "miDebuggerPath": "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gdb.exe",
+    },
+    "linux": {
+      "program": "${workspaceFolder}/open62541-server/build/default/opcuaserver",
+      "miDebuggerPath": "gdb",
+    },
+    "args": [],
+    "stopAtEntry": false,
+    "cwd": "${fileDirname}",
+    "environment": [],
+    "externalConsole": false,
+    "MIMode": "gdb",
+    "setupCommands": [{
+      "description": "Enable pretty-printing for gdb",
+      "text": "-enable-pretty-printing",
+      "ignoreFailures": true
+    }],
+    "preLaunchTask": "CMake open62541 server Debug"
+  },
+  {
+    "name": "FreeOpcUa opcua-asyncio Client",
+    "type": "python",
+    "request": "launch",
+    "program": "${workspaceFolder}/opcua-asyncio-client/src/main.py",
+    "console": "integratedTerminal",
+    "justMyCode": false,
+  }]
 }
