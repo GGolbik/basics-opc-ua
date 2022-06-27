@@ -1,6 +1,17 @@
 {
   "version": "2.0.0",
   "tasks": [{
+    "label": "build-ua.netstandard-client",
+    "command": "dotnet",
+    "type": "process",
+    "args": [
+      "build",
+      "${workspaceFolder}/ua.netstandard-client/src/UaDotnetStandardClient.csproj",
+      "/property:GenerateFullPaths=true",
+      "/consoleloggerparameters:NoSummary"
+    ],
+    "problemMatcher": "$msCompile"
+  },{
       "label": "CMake open62541 server Debug",
       "type": "shell",
       "linux":{
