@@ -151,6 +151,7 @@ async def cert_gen(applicationUri: str, name: x509.Name, password: bytes = b"pas
     )
 
     # Write our key to disk for safe keeping
+    print('write private key to ' + private_key)
     with open(private_key, "wb") as f:
         f.write(key.private_bytes(
             encoding=serialization.Encoding.PEM,
@@ -213,6 +214,7 @@ async def cert_gen(applicationUri: str, name: x509.Name, password: bytes = b"pas
         critical=False
     ).sign(key, hashes.SHA256())  # Sign our certificate with our private key
     # Write our certificate out to disk.
+    print('write certificate to ' + client_cert)
     with open(client_cert, "wb") as f:
         f.write(cert.public_bytes(serialization.Encoding.PEM))
 

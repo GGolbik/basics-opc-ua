@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using Opc.Ua;
 using Opc.Ua.Configuration;
 
@@ -34,8 +35,9 @@ public class Program
             //ConfigSectionName = configSectionName, // will be used if config is loaded without given filePath "${ConfigSectionName}.Config.xml"
             CertificatePasswordProvider = certificatePasswordProvider,
         };
+
         // load the application configuration from file.
-        await application.LoadApplicationConfiguration("config.xml", silent: true);
+        await application.LoadApplicationConfiguration(AppContext.BaseDirectory + "/config.xml", silent: true);
         // update the application configuration
         application.ApplicationConfiguration.SecurityConfiguration = new SecurityConfiguration
         {
